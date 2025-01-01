@@ -12,6 +12,7 @@ class Player {
     public:
      Player(const string& playername);
      string getName() const;
+     vector<Card> getHand() const;
      void drawCards(Deck& deck);
      void removeCardFromHand(const int cardIndex);
      void playCardToBoard(int cardIndex, Board& board);
@@ -19,6 +20,7 @@ class Player {
      void printHand() const;
     private:
      vector<Card> hand;
+     vector<Card> wonCards;
      int cardsInHand;
      int playerScore;
      string name;

@@ -20,7 +20,8 @@ class Card
 
      Rank getRank() const;
      Suit getSuit() const;
-
+     
+     int rankToInt() const;
      string suitToString() const;
      string rankToString() const;
      string cardToString() const;

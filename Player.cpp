@@ -8,6 +8,10 @@ string Player::getName() const {
     return name;
 }
 
+vector<Card> Player::getHand() const {
+    return hand;
+}
+
 
 void Player::drawCards(Deck& deck) {
     while (hand.size() < 4) { // Ensure the hand has at most 4 cards
@@ -20,7 +24,7 @@ bool Player::isHandEmpty() const {
 }
 
 void Player::printHand() const {
-    cout << "Player's hand: ";
+    cout << name << "'s hand: ";
     for(const auto& card : hand) {
         cout << card.cardToString() << " ";
     }
@@ -40,6 +44,13 @@ void Player::playCardToBoard(int cardIndex, Board& board) {
     }
 
     // Add the selected card to the board
+    for(Card c : board.getCardsOnBoard()) {
+        if(hand[cardIndex].rankToInt() + c.rankToInt() == 11) {
+            board.removeCard(c);
+            removeCardFromHand(cardIndex);
+            return;
+        } 
+    }
     board.addCard(hand[cardIndex]);
 
     // Remove the card from the hand

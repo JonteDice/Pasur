@@ -18,6 +18,7 @@ class Game {
      Board board;
      Player player;
      Player opponent;
+     bool isPlayersTurn;
 };
 
 #endif // GAME_H

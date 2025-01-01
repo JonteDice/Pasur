@@ -91,14 +91,14 @@ int main() {
     // cout << endl;
 
     // Test 1
-    if (testInitialCards()) {
-        cout << "Test passed: No Jack card was dealt on the board in 1000 iterations." << endl;
-    } else {
-        cout << "Test failed: A Jack card was dealt on the board." << endl;
-    }
+    // if (testInitialCards()) {
+    //     cout << "Test passed: No Jack card was dealt on the board in 1000 iterations." << endl;
+    // } else {
+    //     cout << "Test failed: A Jack card was dealt on the board." << endl;
+    // }
 
-    // Game game;
-    // game.Start();
+    Game game;
+    game.Start();
 
     return 0;
 }

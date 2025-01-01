@@ -35,6 +35,25 @@ std::string Card::suitToString() const {
     return "Joker"; // Default, should not reach here
 }
 
+int Card::rankToInt() const {
+    switch (myRank) {
+        case two:   return 2;
+        case three: return 3;
+        case four:  return 4;
+        case five:  return 5;
+        case six:   return 6;
+        case seven: return 7;
+        case eight: return 8;
+        case nine:  return 9;
+        case ten:   return 10;
+        case jack:  return 11;
+        case queen: return 12;
+        case king:  return 13;
+        case ace:   return 1;
+    }
+    return 0; // Default, should not reach here
+}
+
 // Convert Rank to string
 std::string Card::rankToString() const {
     switch (myRank) {
